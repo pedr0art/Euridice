@@ -1,0 +1,203 @@
+[gd_scene load_steps=29 format=3 uid="uid://do6nk23yfjsjk"]
+
+[ext_resource type="Script" uid="uid://c4ywwqmhxhwrp" path="res://scenes/menu.gd" id="1_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://bj2dibdnhqv33" path="res://assets/menu]/menu euridice animate1.png" id="1_7jp70"]
+[ext_resource type="Texture2D" uid="uid://pa2hamn73dx4" path="res://assets/menu]/menu euridice animate2.png" id="2_mxgkd"]
+[ext_resource type="Texture2D" uid="uid://dvgxhp0kmr6fj" path="res://assets/menu]/menu euridice animate3.png" id="3_g6gyw"]
+[ext_resource type="Texture2D" uid="uid://dbqhdrreqewfs" path="res://assets/menu]/menu euridice animate4.png" id="4_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://pg5cldx4uxnf" path="res://assets/menu]/menu euridice animate5.png" id="5_81l6r"]
+[ext_resource type="Texture2D" uid="uid://cui6albofo6yr" path="res://assets/menu]/menu euridice animate6.png" id="6_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://b7okxn7fatmro" path="res://assets/menu]/menu euridice animate7.png" id="7_oi1it"]
+[ext_resource type="Texture2D" uid="uid://cki5r1yeoqfla" path="res://assets/menu]/menu euridice animate8.png" id="8_fy8yy"]
+[ext_resource type="Texture2D" uid="uid://c5qogbobg1wvc" path="res://assets/menu]/menu euridice animate9.png" id="9_6wigr"]
+[ext_resource type="Texture2D" uid="uid://bkd73c6o4mdxx" path="res://assets/menu]/menu euridice animate10.png" id="10_lnf0i"]
+[ext_resource type="Texture2D" uid="uid://dkwloydh6m2mb" path="res://assets/menu]/menu euridice animate11.png" id="11_ffqrc"]
+[ext_resource type="Texture2D" uid="uid://cmdpv6lgcqnox" path="res://assets/menu]/menu euridice animate12.png" id="12_x16fv"]
+[ext_resource type="Texture2D" uid="uid://cenrcivci0q1x" path="res://assets/menu]/menu euridice animate13.png" id="13_g54pe"]
+[ext_resource type="Texture2D" uid="uid://bboq4edith0cy" path="res://assets/menu]/menu euridice animate14.png" id="14_48ryc"]
+[ext_resource type="Texture2D" uid="uid://du0ddq0pk5xah" path="res://assets/menu]/menu euridice animate15.png" id="15_vhsb5"]
+[ext_resource type="AudioStream" uid="uid://bbk126sc5pmss" path="res://assets/music/menu.mp3" id="16_g6gyw"]
+[ext_resource type="FontFile" uid="uid://cibktvpy5w8r7" path="res://assets/Fonts/CWDRKAGE.TTF" id="17_3dmrc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwfsl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7jp70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mxgkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g6gyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3dmrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81l6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rsfmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oi1it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fy8yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6wigr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lnf0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ffqrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x16fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g54pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_48ryc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vhsb5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6gyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dmrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81l6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsfmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1it"]
+
+[sub_resource type="Theme" id="Theme_81l6r"]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0.165656, 0.165656, 0.165656, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_g6gyw")
+Button/styles/focus = SubResource("StyleBoxEmpty_3dmrc")
+Button/styles/hover = SubResource("StyleBoxEmpty_81l6r")
+Button/styles/normal = SubResource("StyleBoxEmpty_rsfmq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_oi1it")
+
+[sub_resource type="Animation" id="Animation_81l6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3dmrc"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsfmq"]
+_data = {
+&"RESET": SubResource("Animation_81l6r"),
+&"fade_in": SubResource("Animation_3dmrc")
+}
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_3dmrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(961.556, 540)
+scale = Vector2(3.01111, 3.01111)
+sprite_frames = SubResource("SpriteFrames_hwfsl")
+autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_g6gyw")
+autoplay = true
+
+[node name="iniciar" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 313.0
+offset_right = 1186.0
+offset_bottom = 420.0
+theme = SubResource("Theme_81l6r")
+theme_override_fonts/font = ExtResource("17_3dmrc")
+theme_override_font_sizes/font_size = 80
+text = "Iniciar"
+
+[node name="sair" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 431.0
+offset_right = 1186.0
+offset_bottom = 538.0
+theme = SubResource("Theme_81l6r")
+theme_override_fonts/font = ExtResource("17_3dmrc")
+theme_override_font_sizes/font_size = 80
+text = "Sair"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -36.0
+offset_top = -51.0
+offset_right = 2028.0
+offset_bottom = 1121.0
+color = Color(0, 0, 0, 1)
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rsfmq")
+}
+
+[connection signal="pressed" from="iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
+[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]

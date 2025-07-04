@@ -1,24 +1,195 @@
-[gd_scene load_steps=4 format=3 uid="uid://53hn5t6c62yb"]
+[gd_scene load_steps=30 format=3 uid="uid://53hn5t6c62yb"]
 
 [ext_resource type="Script" uid="uid://b8q6tblrup23m" path="res://scripts/orfeu.gd" id="1_u25du"]
-[ext_resource type="Texture2D" uid="uid://cfrnv615he0c0" path="res://assets/sprites/Rectangle 51.png" id="2_c43vp"]
+[ext_resource type="Texture2D" uid="uid://c3ow0abys1pve" path="res://assets/sprites/orfeu/punhetasso1.png" id="2_jxiji"]
+[ext_resource type="Texture2D" uid="uid://ksmeonfmndfh" path="res://assets/lights/light-sing.png" id="2_xfxsa"]
+[ext_resource type="Texture2D" uid="uid://dqkhpoha0thi6" path="res://assets/sprites/orfeu/orfeu ajoelhado1.png" id="3_84i3g"]
+[ext_resource type="Texture2D" uid="uid://b7ho4mqb64nhy" path="res://assets/sprites/orfeu/punhetasso2.png" id="3_h4ihe"]
+[ext_resource type="Texture2D" uid="uid://vk508iyt3xrk" path="res://assets/sprites/orfeu/orfeu ajoelhado2.png" id="4_nhpcu"]
+[ext_resource type="Texture2D" uid="uid://desh0rbyr6iw0" path="res://assets/sprites/orfeu/sprite costa 2.png" id="4_qu0d0"]
+[ext_resource type="Texture2D" uid="uid://cab0bpk1ymund" path="res://assets/sprites/orfeu/punhetasso3.png" id="4_xfxsa"]
+[ext_resource type="Texture2D" uid="uid://cuhbvyrjnfm5" path="res://assets/sprites/orfeu/orfeu ajoelhado3.png" id="5_0alpg"]
+[ext_resource type="Texture2D" uid="uid://b73wdjoo7slbe" path="res://assets/sprites/orfeu/sprite costa 3.png" id="5_76b6g"]
+[ext_resource type="Texture2D" uid="uid://0a1gv4jo0jkx" path="res://assets/sprites/orfeu/sprite costa 4.png" id="6_ja1nb"]
+[ext_resource type="Texture2D" uid="uid://clxehd53priub" path="res://assets/sprites/orfeu/negao bundudo lateral1.png" id="6_lc30c"]
+[ext_resource type="Texture2D" uid="uid://bfope3u2moxf1" path="res://assets/sprites/orfeu/sprite frente orfeu2 (3).png" id="7_8o0d0"]
+[ext_resource type="Texture2D" uid="uid://cgcwgj6gtxasm" path="res://assets/sprites/orfeu/negao bundudo lateral2.png" id="7_dauoc"]
+[ext_resource type="Texture2D" uid="uid://cu7t4c0l7n4t8" path="res://assets/sprites/orfeu/sprite costa 5.png" id="7_rkj5l"]
+[ext_resource type="Texture2D" uid="uid://cvueboar3wm8w" path="res://assets/sprites/orfeu/negao bundudo lateral3.png" id="8_2efd2"]
+[ext_resource type="Texture2D" uid="uid://cttjhkr8ili3j" path="res://assets/sprites/orfeu/negao bundudo lateral4.png" id="9_jxiji"]
+[ext_resource type="Texture2D" uid="uid://bb6084nwy4l7r" path="res://assets/sprites/orfeu/negao bundudo direita1.png" id="10_h4ihe"]
+[ext_resource type="Texture2D" uid="uid://be4vrg15u8x6m" path="res://assets/sprites/orfeu/negao bundudo direita2.png" id="11_xfxsa"]
+[ext_resource type="Texture2D" uid="uid://d10fd7ttfyh75" path="res://assets/sprites/orfeu/negao bundudo direita3.png" id="12_8o0d0"]
+[ext_resource type="Texture2D" uid="uid://cpi158b7ii8k3" path="res://assets/sprites/orfeu/negao bundudo direita4.png" id="13_83oc8"]
+[ext_resource type="AudioStream" uid="uid://d1pja1dja2rha" path="res://assets/sounds/lira.mp3" id="17_h4ihe"]
+[ext_resource type="AudioStream" uid="uid://co7knyff8c6an" path="res://assets/sounds/gemido1 (mp3cut.net).wav" id="20_knd11"]
+[ext_resource type="AudioStream" uid="uid://y7xcu40t2g8p" path="res://assets/sounds/gemido2 (mp3cut.net).wav" id="21_ec86n"]
+[ext_resource type="AudioStream" uid="uid://kx2sdf5xjmlv" path="res://assets/sounds/gemido3 (mp3cut.net).wav" id="22_fiwkc"]
+[ext_resource type="AudioStream" uid="uid://b72w5nseererq" path="res://assets/sounds/jumpscare.mp3" id="23_ec86n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u25du"]
-size = Vector2(30, 29)
+size = Vector2(16, 32)
 
-[node name="orfeu" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_buhoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_84i3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nhpcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0alpg")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_76b6g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jxiji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h4ihe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xfxsa")
+}],
+"loop": true,
+"name": &"singing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8o0d0")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_76b6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qu0d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rkj5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ja1nb")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dauoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2efd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jxiji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lc30c")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xfxsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8o0d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_83oc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h4ihe")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc30c"]
+radius = 34.0
+
+[node name="orfeu" type="CharacterBody2D" groups=["player"]]
+collision_mask = 15
 script = ExtResource("1_u25du")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_u25du")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_c43vp")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.5, 0.5)
+offset = Vector2(0, 50)
 ignore_rotation = false
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(6, 6)
 drag_vertical_offset = -1.0
-drag_bottom_margin = 0.45
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.35, 0.35)
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = ExtResource("2_xfxsa")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_buhoj")
+animation = &"death"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_h4ihe")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lc30c")
+
+[node name="areavisao" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="colisaovisao" type="CollisionShape2D" parent="areavisao"]
+shape = SubResource("CircleShape2D_lc30c")
+
+[node name="gemido1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_knd11")
+
+[node name="gemido2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_ec86n")
+
+[node name="gemido3" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("22_fiwkc")
+
+[node name="jumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_ec86n")
+volume_db = 5.0
+
+[node name="passos" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="areavisao" to="." method="_on_areavisao_body_entered"]

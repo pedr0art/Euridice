@@ -1,0 +1,6 @@
+~ start
+set Globals.is_dialoguing = true
+do wait(1.0)
+ : Aperte "E" para tocar a lira e expandir sua visão
+set Globals.is_dialoguing = false
+=> END

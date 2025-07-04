@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://s5ymygxlt5qd"]
+
+[ext_resource type="Texture2D" uid="uid://bgixfue75458o" path="res://assets/sprites/enemy/waechter-20 Charset.png" id="1_7wghy"]
+[ext_resource type="Script" uid="uid://bwcktxawt48xw" path="res://scripts/inimigo_polvo.gd" id="1_bwn7b"]
+[ext_resource type="AudioStream" uid="uid://cxafiwo618l68" path="res://assets/music/chase (mp3cut.net).mp3" id="3_4dac3"]
+[ext_resource type="AudioStream" uid="uid://o4q6hop728fe" path="res://assets/sounds/wmonstro2 (mp3cut.net).mp3" id="4_y4dst"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwn7b"]
+radius = 19.105
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qviuw"]
+atlas = ExtResource("1_7wghy")
+region = Rect2(0, 0, 95, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dac3"]
+atlas = ExtResource("1_7wghy")
+region = Rect2(95, 0, 95, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4dst"]
+atlas = ExtResource("1_7wghy")
+region = Rect2(190, 0, 95, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ainme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qviuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dac3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4dst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wghy"]
+radius = 86.0058
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qviuw"]
+radius = 23.0217
+
+[node name="polvao" type="CharacterBody2D" groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_bwn7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -2)
+shape = SubResource("CircleShape2D_bwn7b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 1)
+sprite_frames = SubResource("SpriteFrames_ainme")
+frame_progress = 0.139282
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+path_postprocessing = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7wghy")
+debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
+
+[node name="BodyArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea2D"]
+position = Vector2(-2, -3)
+shape = SubResource("CircleShape2D_qviuw")
+debug_color = Color(4.81307e-07, 0.639826, 0.359024, 0.42)
+
+[node name="chase" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4dac3")
+
+[node name="monstro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y4dst")

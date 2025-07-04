@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y7xcu40t2g8p"
+path="res://.godot/imported/gemido2 (mp3cut.net).wav-7a88e2110066c31382d7116cf15d643e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/gemido2 (mp3cut.net).wav"
+dest_files=["res://.godot/imported/gemido2 (mp3cut.net).wav-7a88e2110066c31382d7116cf15d643e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

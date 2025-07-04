@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgap5528fvd7k"]
+
+[ext_resource type="Texture2D" uid="uid://cbhai5kt3wr0q" path="res://assets/sprites/enemy/Sprite-monstro1.png" id="1_m2cw6"]
+[ext_resource type="Script" uid="uid://rwbq4sq6jscs" path="res://scripts/inimigo.gd" id="1_s3exx"]
+[ext_resource type="Texture2D" uid="uid://bocm504iec6w" path="res://assets/sprites/enemy/Sprite-monstro2.png" id="2_s3exx"]
+[ext_resource type="AudioStream" uid="uid://cxafiwo618l68" path="res://assets/music/chase (mp3cut.net).mp3" id="4_ul53d"]
+[ext_resource type="AudioStream" uid="uid://blkn5qjgkrhne" path="res://assets/sounds/wmonstro1 (mp3cut.net).mp3" id="5_jbdgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ew2f"]
+size = Vector2(50, 59.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul53d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m2cw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s3exx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2cw6"]
+radius = 75.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3exx"]
+size = Vector2(59, 69)
+
+[node name="ohthemisery" type="CharacterBody2D" groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_s3exx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_2ew2f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 0)
+sprite_frames = SubResource("SpriteFrames_ul53d")
+frame_progress = 0.729421
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+path_postprocessing = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m2cw6")
+debug_color = Color(0.913725, 0, 0.713726, 0.419608)
+
+[node name="BodyArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea2D"]
+position = Vector2(2, -2)
+shape = SubResource("RectangleShape2D_s3exx")
+debug_color = Color(0, 0.639885, 0.358151, 0.42)
+
+[node name="chase" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ul53d")
+
+[node name="monstro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jbdgi")
+volume_db = 10.0

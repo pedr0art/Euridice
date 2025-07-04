@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://boq1pw0fiyinq"]
+
+[ext_resource type="Script" uid="uid://dpisnqe1cjk5w" path="res://scripts/euridice.gd" id="1_mlbcj"]
+[ext_resource type="Texture2D" uid="uid://dlhqddiaa4ls8" path="res://assets/sprites/euridice/euridice.png" id="1_taton"]
+[ext_resource type="Texture2D" uid="uid://chdffnt336fwr" path="res://assets/sprites/euridice/euridice 2.png" id="3_yjnbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlbcj"]
+size = Vector2(13, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjnbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_taton")
+}],
+"loop": false,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yjnbd")
+}],
+"loop": false,
+"name": &"side",
+"speed": 5.0
+}]
+
+[node name="euridice" type="CharacterBody2D"]
+process_mode = 3
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_mlbcj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_mlbcj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yjnbd")
+animation = &"front"
+autoplay = "front"

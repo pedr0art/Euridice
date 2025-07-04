@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blkn5qjgkrhne"
+path="res://.godot/imported/wmonstro1 (mp3cut.net).mp3-ee23dc1464c38747f005fc0fdebc1c78.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/wmonstro1 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/wmonstro1 (mp3cut.net).mp3-ee23dc1464c38747f005fc0fdebc1c78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

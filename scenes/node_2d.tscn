@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyf1iuxv802ym"]
+
+[ext_resource type="Texture2D" uid="uid://t5m038ltq2ec" path="res://assets/scenes/hades full.png" id="1_6e84v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 545)
+texture = ExtResource("1_6e84v")

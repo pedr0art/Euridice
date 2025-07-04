@@ -1,0 +1,42 @@
+~ start
+do wait(1.0)
+set Globals.orfeu = true
+Orfeu:  Eu não partirei sem ela...
+Orfeu: Eurídice é meu amor. Minha razão de existir.
+Orfeu: Viver sem ela seria apenas... sobreviver — e isso não me basta.
+set Globals.hades_full = true
+set Globals.orfeu = false
+Hades: E quem és tu, Orfeu, para suplicar por uma alma perdida?
+Hades: Nenhum mortal comanda os portões da morte.
+Hades: Nenhuma alma abandona a Casa de Hades impunemente.
+Hades: Diz-me, então: que preço pagarias pela alma de tua amada?
+Orfeu: Tudo.
+Hades: "Tudo" é pouco para mim, cantor.
+Hades: Nenhuma alma abandona a Casa de Hades.
+set Globals.persefone = true
+set Globals.hades_full = false
+Perséfone: Meu senhor e marido, escuta:
+Perséfone: Uma alma que cruza os Campos de Asfódelos,
+Perséfone: Que passa pela planície do Julgamento,
+Perséfone: E marcha até os próprios degraus de tua casa,
+Perséfone: Prova-se, ao menos, digna de um desafio. 
+Perséfone: Deixe-os ir.
+set Globals.hades_perfil = true
+set Globals.persefone = false
+Hades: Pois bem.
+Hades: Eu os deixo… tentar.
+Hades: Escuta com atenção, Orfeu — pois minha palavra é lei:
+Hades: Para a alma de tua amada salvar,
+Hades: Há de cruzar esta terra a pé,
+Hades: Na escuridão que nem os deuses ousam fitar,
+Hades: Tendo apenas tua lira... e tua mente.
+Hades: Mas ouve bem:
+Hades: Se olhares para trás — um só olhar —
+set Globals.hades_full = true
+set Globals.hades_perfil = false
+Hades: Ela será minha para sempre.
+set Globals.orfeu = true
+set Globals.hades_full = false
+Hades: Não olhes para trás.
+set avanco = true
+=> END

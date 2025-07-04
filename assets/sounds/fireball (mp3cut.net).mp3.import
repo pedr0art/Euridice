@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6tha542s8heb"
+path="res://.godot/imported/fireball (mp3cut.net).mp3-6855447112db1c8d36e403e4fc8b5843.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/fireball (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/fireball (mp3cut.net).mp3-6855447112db1c8d36e403e4fc8b5843.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgfflbqko6022"
+path="res://.godot/imported/passos (mp3cut.net) (5).mp3-842394d4f8bcadf97b8b96b4a7312511.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/steps/passos (mp3cut.net) (5).mp3"
+dest_files=["res://.godot/imported/passos (mp3cut.net) (5).mp3-842394d4f8bcadf97b8b96b4a7312511.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
