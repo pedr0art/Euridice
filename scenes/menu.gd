@@ -3,8 +3,9 @@ var prox_level = preload("res://scenes/inicio.tscn")
 @onready var color_rect: ColorRect = $ColorRect
 @onready var transition: AnimationPlayer = $transition
 func _ready() -> void:
-	color_rect.visible = false
+	get_tree().paused = false
 	Globals.is_dialoguing = false
+	color_rect.visible = false
 func _on_iniciar_pressed() -> void:
 	transition.play("fade_in")
 	

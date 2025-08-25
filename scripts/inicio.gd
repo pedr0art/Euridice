@@ -17,18 +17,25 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(resource, "start")
 
 func _process(delta: float) -> void:
+	if Globals.paused:
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
 	var new_texture: Texture = null
 	var new_scale: Vector2 = Vector2.ONE  # escala padrão
 
 	if Globals.orfeu:
 		new_texture = image_1
+		new_scale = Vector2(0.34, 0.34)
 	elif Globals.hades_full:
 		new_texture = image_2
+		new_scale = Vector2(0.34, 0.34)
 	elif Globals.hades_perfil:
 		new_texture = image_3
+		new_scale = Vector2(0.34, 0.34)
 	elif Globals.persefone:
 		new_texture = image_4
-		new_scale = Vector2(0.5, 0.5)  # metade do tamanho
+		new_scale = Vector2(0.17, 0.17)  # metade do tamanho
 
 	if new_texture != null and sprite_2d.texture != new_texture:
 		sprite_2d.texture = new_texture

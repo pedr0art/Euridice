@@ -28,6 +28,8 @@ func _ready():
 
 	
 func _physics_process(delta):
+	if Globals.obscurece:
+		jumpscare.stop()
 	if Globals.is_dialoguing:
 		velocity = Vector2.ZERO
 		anim.play("idle")
@@ -69,6 +71,7 @@ func _physics_process(delta):
 			clamp(new_scale.y, 0.35, max_light_scale)
 		)
 		detect_enemies()
+
 func _input(event):
 	if event.is_action_pressed("emitir_som") and can_emit:
 		start_emitting()

@@ -139,15 +139,14 @@ script = ExtResource("1_u25du")
 shape = SubResource("RectangleShape2D_u25du")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.5, 0.5)
 offset = Vector2(0, 50)
 ignore_rotation = false
-zoom = Vector2(6, 6)
+zoom = Vector2(2, 2)
 drag_vertical_offset = -1.0
+drag_bottom_margin = 0.5
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(0, -3.8147e-06)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.3075, 0.3075)
 range_item_cull_mask = 3
 shadow_enabled = true
 texture = ExtResource("2_xfxsa")
@@ -189,7 +188,5 @@ stream = ExtResource("22_fiwkc")
 [node name="jumpscare" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_ec86n")
 volume_db = 5.0
-
-[node name="passos" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="areavisao" to="." method="_on_areavisao_body_entered"]

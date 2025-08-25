@@ -94,9 +94,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -32.0
-offset_top = -219.0
-offset_right = 45.0
-offset_bottom = 30.0
+offset_top = -89.0
+offset_right = 30.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -112,8 +112,7 @@ texture = SubResource("GradientTexture2D_ya2yx")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
@@ -126,7 +125,7 @@ mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("2_studd")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -138,7 +137,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("2_studd")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 15
 text = "Dialogue..."
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]

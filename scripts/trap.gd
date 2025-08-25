@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var area_direita = $area_direita
 @onready var area_esquerda = $area_esquerda
 @onready var light = $Light
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var cooldown := 5.0
 
@@ -56,3 +57,6 @@ func _on_timer_timeout():
 func _on_area_entered(body):
 	if firing and body.is_in_group("player"):
 		Globals.dar_dano()
+func _process(delta: float) -> void:
+	if Globals.obscurece:
+		audio_stream_player_2d.stop()

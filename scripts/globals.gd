@@ -10,6 +10,7 @@ var hades_full = false
 var hades_perfil = false
 var persefone = false
 var is_dialoguing = false
+var paused = false
 func dar_dano():
 	if player_life > 0:
 		player_life -= 1

@@ -17,6 +17,7 @@ var tween: Tween
 var musica_abaixada := false  # controle do estado anterior
 
 func _ready():
+	get_tree().paused = false
 	var resource = load("res://dialogues/tutorial.dialogue")
 	DialogueManager.show_dialogue_balloon(resource, "start")
 	color_rect_2.visible = false
@@ -31,6 +32,10 @@ func _ready():
 func _process(_delta):
 	if Globals.volta_comeco:
 		await morte_e_reinicio()
+	if Globals.paused: 
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
 
 	# Verifica se o estado de canto mudou
 	if Globals.is_singing and not musica_abaixada:
@@ -62,8 +67,14 @@ func _on_player_dano_recebido(vida_restante):
 		await morte_e_reinicio()
 
 func morte_e_reinicio():
+	# Pare os sons indesejados manualmente
+	grito.stop()
+	background_music.stop()
+	background_2.stop()
+	
 	if not defeat.playing:
 		defeat.play()
+
 	get_tree().paused = true
 	Globals.obscurece = true
 	await get_tree().create_timer(2.0).timeout
@@ -71,7 +82,6 @@ func morte_e_reinicio():
 
 func _on_game_over_button_pressed():
 	defeat.stop()
-	get_tree().paused = false
 	get_tree().reload_current_scene()
 	Globals.volta_comeco = false
 	Globals.obscurece = false

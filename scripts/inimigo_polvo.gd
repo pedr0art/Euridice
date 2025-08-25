@@ -8,8 +8,6 @@ extends CharacterBody2D
 @onready var chase: AudioStreamPlayer2D = $chase
 @onready var monstro: AudioStreamPlayer2D = $monstro
 
-
-
 var target_player: Node2D = null
 var perseguindo := false
 var indo_ate_som := false
@@ -30,7 +28,19 @@ func ouvir_som(posicao_alvo: Vector2):
 			chase.play()
 func _process(delta: float) -> void:
 	if not perseguindo and chase.playing:
+		# Cria um tween para suavizar o volume e parar o som
+		var tween = create_tween()
+		tween.tween_property(chase, "volume_db", -40.0, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween.tween_callback(func():
+			chase.stop()
+			chase.volume_db = 0.0  # Reseta para o volume normal
+		)
+	if Globals.obscurece:
 		chase.stop()
+		monstro.stop()
+		velocity = Vector2.ZERO
+		anim.stop()
+		return
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		target_player = body

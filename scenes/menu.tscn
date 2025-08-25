@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://do6nk23yfjsjk"]
+[gd_scene load_steps=24 format=3 uid="uid://do6nk23yfjsjk"]
 
 [ext_resource type="Script" uid="uid://c4ywwqmhxhwrp" path="res://scenes/menu.gd" id="1_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://bj2dibdnhqv33" path="res://assets/menu]/menu euridice animate1.png" id="1_7jp70"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://du0ddq0pk5xah" path="res://assets/menu]/menu euridice animate15.png" id="15_vhsb5"]
 [ext_resource type="AudioStream" uid="uid://bbk126sc5pmss" path="res://assets/music/menu.mp3" id="16_g6gyw"]
 [ext_resource type="FontFile" uid="uid://cibktvpy5w8r7" path="res://assets/Fonts/CWDRKAGE.TTF" id="17_3dmrc"]
+[ext_resource type="Theme" uid="uid://cu51ctctkplq1" path="res://menu.tres" id="18_81l6r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hwfsl"]
 animations = [{
@@ -71,26 +72,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6gyw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dmrc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81l6r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsfmq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1it"]
-
-[sub_resource type="Theme" id="Theme_81l6r"]
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_color = Color(0.165656, 0.165656, 0.165656, 1)
-Button/styles/disabled = SubResource("StyleBoxEmpty_g6gyw")
-Button/styles/focus = SubResource("StyleBoxEmpty_3dmrc")
-Button/styles/hover = SubResource("StyleBoxEmpty_81l6r")
-Button/styles/normal = SubResource("StyleBoxEmpty_rsfmq")
-Button/styles/pressed = SubResource("StyleBoxEmpty_oi1it")
 
 [sub_resource type="Animation" id="Animation_81l6r"]
 length = 0.001
@@ -156,8 +137,8 @@ _data = {
 script = ExtResource("1_3dmrc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(961.556, 540)
-scale = Vector2(3.01111, 3.01111)
+position = Vector2(321, 182)
+scale = Vector2(1.00937, 1.02222)
 sprite_frames = SubResource("SpriteFrames_hwfsl")
 autoplay = "default"
 
@@ -166,31 +147,31 @@ stream = ExtResource("16_g6gyw")
 autoplay = true
 
 [node name="iniciar" type="Button" parent="."]
-offset_left = 776.0
-offset_top = 313.0
-offset_right = 1186.0
-offset_bottom = 420.0
-theme = SubResource("Theme_81l6r")
+offset_left = 271.0
+offset_top = 104.0
+offset_right = 384.0
+offset_bottom = 141.0
+theme = ExtResource("18_81l6r")
 theme_override_fonts/font = ExtResource("17_3dmrc")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 30
 text = "Iniciar"
 
 [node name="sair" type="Button" parent="."]
-offset_left = 776.0
-offset_top = 431.0
-offset_right = 1186.0
-offset_bottom = 538.0
-theme = SubResource("Theme_81l6r")
+offset_left = 266.0
+offset_top = 141.0
+offset_right = 379.0
+offset_bottom = 178.0
+theme = ExtResource("18_81l6r")
 theme_override_fonts/font = ExtResource("17_3dmrc")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = -36.0
 offset_top = -51.0
-offset_right = 2028.0
-offset_bottom = 1121.0
+offset_right = 650.0
+offset_bottom = 380.0
 color = Color(0, 0, 0, 1)
 
 [node name="transition" type="AnimationPlayer" parent="."]
