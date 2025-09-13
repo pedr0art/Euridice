@@ -36,20 +36,39 @@ func _physics_process(delta):
 		return
 	var direction := Vector2.ZERO
 
+	var death_direction := Vector2.ZERO
+
+
 	if not emitting:
+		# Captura inputs em forma de vetor
 		if Input.is_action_pressed("cima"):
 			direction.y = -1
-			anim.play("walk_front")
 		elif Input.is_action_pressed("baixo"):
 			direction.y = 1
-			anim.play("death")
-			Globals.olhou_costa()
 		elif Input.is_action_pressed("esquerda"):
 			direction.x = -1
-			anim.play("walk_left")
 		elif Input.is_action_pressed("direita"):
 			direction.x = 1
-			anim.play("walk_right")
+
+		# Se o jogador tentou se mover
+		if direction != Vector2.ZERO:
+			# Se tentou ir na direção oposta à atual -> morte
+			if direction == -direcao_atual and direcao_atual != Vector2.ZERO:
+				anim.play("death")
+				Globals.olhou_costa()
+			else:
+				# Escolhe animação baseada em x/y
+				if direction.y == -1:
+					anim.play("walk_front")
+				elif direction.y == 1:
+					anim.play("walk_back")
+				elif direction.x == -1:
+					anim.play("walk_left")
+				elif direction.x == 1:
+					anim.play("walk_right")
+
+				# Atualiza a direção atual
+				direcao_atual = direction.normalized()
 		else:
 			anim.stop()
 			anim.frame = 0
@@ -57,8 +76,7 @@ func _physics_process(delta):
 		# Enquanto cantando, toca animação "singing"
 		if anim.animation != "singing":
 			anim.play("singing")
-	if direction != Vector2.ZERO:
-		direcao_atual = direction.normalized()
+
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
 
